@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt-nodejs';
 mongoose.set('debug',true);
 
 /*=======================  Defining the schema  =============================================*/
@@ -23,5 +24,26 @@ let UserSchema=new mongoose.Schema({
 	}],
 	uploads:[]
 },{collection:"chat", versionKey:false});
+
+
+UserSchema.pre('save', function (next) {  
+	let user = this;
+	if (this.isModified('password') || this.isNew) {
+		bcrypt.genSalt(10, function (err, salt) {
+			if (err) {
+				return next(err);
+			}
+			bcrypt.hash(user.password, salt,null, function(err, hash) {
+				if (err) {
+					return next(err);
+				}
+				user.password = hash;
+				next();
+			});
+		});
+	} else {
+		return next();
+	}
+});
 
 module.exports=mongoose.model('chat',UserSchema);

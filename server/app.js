@@ -7,6 +7,13 @@ import path from 'path';
 // import favicon from 'serve-favicon';
 
 import index from './routes/index';
+import group from './routes/group';
+import register from './routes/register';
+
+const db = require('mongoose');
+
+db.connect('mongodb://localhost/chat', { useMongoClient: true });
+
 
 const app = express();
 const debug = Debug('server:app');
@@ -24,7 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-
+app.use('/groupchat', group);
+app.use('/register',register);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -42,11 +50,12 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.json(err);
 });
+app.listen()
 
 // Handle uncaughtException
-process.on('uncaughtException', (err) => {
-  debug('Caught exception: %j', err);
-  process.exit(1);
-});
+// process.on('uncaughtException', (err) => {
+//   debug('Caught exception: %j', err);
+//   process.exit(1);
+// });
 
 export default app;
