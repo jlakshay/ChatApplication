@@ -5,11 +5,12 @@ import user from '../../model/user';
 /*===================  load up the user model ==============================================*/
 import message from '../../config/app.config';
 // import logger from '../../log4js';
+import bcrypt from 'bcrypt-nodejs';
 /*===================  load up the user model ==============================================*/
 import *  as config from  '../../config/app.config';
 module.exports = (req,res)=>{
 	try{
-	User.find({"email":req.body.email},(err,result)=>{ //check the email id
+	user.find({"email":req.body.email},(err,result)=>{ //check the email id
 		if(result.length!=0)
 		{
 			// logger.info(config.conf.register.userExist );
@@ -18,18 +19,18 @@ module.exports = (req,res)=>{
 		else{
 			// logger.info(config.conf.register.new);
 
-  		   let user=new User();
-            user.fullName=req.body.fullName;
-            user.password=req.body.password;
-            user.email=req.body.email;
-            user.contact=req.body.contact;
-            user.dob=req.body.dob;
-            user.gender=req.body.gender;
-            user.profilePhoto=req.body.profilePhoto; //input all the fields value
+  		   let newuser=new user();
+            newuser.fullName=req.body.fullName;
+            newuser.password=req.body.password;
+            newuser.email=req.body.email;
+            newuser.contact=req.body.contact;
+            newuser.dob=req.body.dob;
+            newuser.gender=req.body.gender;
+            newuser.profilePhoto=req.body.profilePhoto; //input all the fields value
 
             //console.log('hello')
 			 //input all the fields value
-			user.save((err,result)=>{
+			newuser.save((err,result)=>{
 			//	console.log("check");
 				if(err){
 					res.send(err);

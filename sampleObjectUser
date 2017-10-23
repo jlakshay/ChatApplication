@@ -1,0 +1,43 @@
+db.chat.insert({
+	"_id" : ObjectId("59ed8c3f1d32918c2fe2c03a"),
+	"fullname" : "Vismita P",
+	"email" : "vismi.25@gmail.com",
+	"password" : "newPassword",
+	"contact" : 9999999999,
+	"dob" : "25-03-1996",
+	"gender" : "Female",
+	"profilePhoto" : "route",
+	"status" : "Fools rush in where angles fear to tread",
+	"isActive" : true,
+	"chats" : [
+		
+		{
+			"from" : "vismi.25@gmail.com",
+			"to" : "lakshayjain@gmail.com",
+			"time" : ISODate("2017-10-22T18:30:00Z"),
+			"message" : "hi",
+			"flag" : true
+		},
+		{
+			"from" : "vismi.25@gmail.com",
+			"to" : "sakshamb2@gmail.com",
+			"time" : ISODate("2017-10-22T18:40:00Z"),
+			"message" : "hi",
+			"flag" : true
+		},
+		{
+			"from" : "vismi.25@gmail.com",
+			"to" : "rumanijain@gmail.com",
+			"time" : ISODate("2017-10-25T18:40:00Z"),
+			"message" : "heyaa",
+			"flag" : true
+		},
+		{
+			"from" : "vismi.25@gmail.com",
+			"to" : "shivangisharma@gmail.com",
+			"time" : ISODate("2017-10-26T18:40:00Z"),
+			"message" : "Did you clean the dishes?",
+			"flag" : true
+		}
+	]
+})

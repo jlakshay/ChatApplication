@@ -5,11 +5,12 @@ import express from 'express';
 import logger from 'morgan';
 import path from 'path';
 // import favicon from 'serve-favicon';
-
+import update from './routes/updateUserData';
 import index from './routes/index';
 import group from './routes/group';
 import register from './routes/register';
-
+import otpVerify from './routes/otpVerification/verification';
+import forgotPassword from './routes/forgotPassword'
 const db = require('mongoose');
 
 db.connect('mongodb://localhost/chat', { useMongoClient: true });
@@ -33,6 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/groupchat', group);
 app.use('/register',register);
+app.use('/update', update);
+app.use('/otpVerify', otpVerify);
+app.use('/forgotPass',forgotPassword)
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
