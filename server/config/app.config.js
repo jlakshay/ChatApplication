@@ -7,5 +7,14 @@ register:
 		new:"new user",
 		newUser:"new user registered",
 		serverError:"Server Error"
+	},
+	login:
+	{
+		error:"error occured",
+		notFound:"user not found",
+		authentication:"Authentication failed. Passwords did not match.",
+		Bearer:"Bearer ",
+		serverError:"Server Error"
 	}
+
 }
