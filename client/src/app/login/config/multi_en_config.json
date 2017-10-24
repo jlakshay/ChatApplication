@@ -1,0 +1,17 @@
+  {
+	"login":{
+		"loginHeader" : "login",
+		"emailPlaceholder" : "Email Address ",
+		"passwordPlaceholder" : "Password",
+		"emailRequired":"Email is Required",
+		"emailPattern":"Email format should be",
+		"email":"joe@abc.com",
+		"paswordRequired":"Password is required",
+		"loginButton":"Login",
+		"forgetPasswordButton":"Forget Password",
+		"registerButton":"Register",
+    "loginAlert":"email does not exist",
+    "minPassLen":"Password should be of minimum 5 characters"
+}
+}
+

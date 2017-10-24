@@ -1,0 +1,60 @@
+ <div id="hero" class="img-responsive">
+  <div class="hero-container">
+    <div class="container">
+      <form (ngSubmit)="save(f.value, f.valid)" #f="ngForm" >
+        <div class="row" >
+          <h2 id="loginHeader">{{word.loginHeader}}</h2>
+        </div>
+        <div class="row" id="content">
+          <div class="input-group input-group-icon">
+            <input type="email"  name="email" placeholder={{word.emailPlaceholder}}   required
+            [(ngModel)]="data.email" name="email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            #email="ngModel">        
+          </div>
+
+          <div [hidden]="email.valid || email.pristine"
+          class="alert alert-danger">
+          <div [hidden]="!email.hasError('required')">{{word.emailRequired}}</div>
+          <div [hidden]="!email.hasError('pattern')">{{word.emailPattern}}<small><b>{{word.email}}</b></small></div>
+        </div>      
+
+        <div class="input-group input-group-icon">
+          <input type="password"  name="Password" placeholder={{word.passwordPlaceholder}}  required
+          minlength="5"
+          [(ngModel)]="data.password" name="password"
+          #password="ngModel">
+
+
+        </div>
+
+        <div [hidden]="password.valid || (password.pristine && !f.submitted)"
+        class="alert alert-danger">
+        <div [hidden]="!password.hasError('minlength')">{{word.minPassLen}}</div>
+        <div [hidden]="!password.hasError('required')">{{word.paswordRequired}}</div>
+      </div> 
+    </div>
+    <button id="login" type="button" (click)=login(data) class="btn btn-outline-success">{{word.loginButton}}</button>
+
+    <button id="register" type="button" class="btn btn-outline-success" routerLink='/register'>{{word.registerButton}}</button><br/><br/>
+    <a  class="pass" routerLink='/forgetpass'>{{word.forgetPasswordButton}}</a>
+  
+    <br><div class="pull-right col-lg-4 col-xs-12"></div>   
+  </form>
+
+</div>
+</div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+

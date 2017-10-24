@@ -7,21 +7,20 @@ export const testConf={
     	"fullName":"nishant",
         "emailNegative":"nishantjaiswal"
 	},
-  flagTest:{
-		"Email":"nishantjaiswal49@gmail.com",
-		"flag":1,
-		"cardNo":"123"
-	},
 
-	tokenTest:{
-        id: "593e855e071f542534ea437f",
-		email:"nishantjaiswal49@gmail.com",
-        password:"$2a$10$GzYKtCErFPW1DSpFDjTd2.DQXKjPwEhPbBuW3lTWZ/qzpJDgHexCi" 
+  responseTest:{
+    
+		email:"shivangisharma0812@gmail.com",
+        password:"$2a$10$8JFn3QqUQcBnPtmcdr7f5O4PhzwIPpM4Ew8K5LzEib5rstcFqFjMS" 
       },
     otpMail:{
     	"email":"abc@abc.com",
     	"subject":"Test Subject",
     	"content": "Test Content"
+    },
+      loginTest:{
+        "email":"shivangisharma0812@gmail.com",
+        "password":"12345"
     },
     
     otpMailMessage:{

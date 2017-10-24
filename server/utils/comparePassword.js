@@ -8,4 +8,9 @@ module.exports=function(givenPW,savedPW,cb){
 		}
 		cb(null,isMatch);
 	});
+	function isLOggedIn(req,res,next){
+  if(req.isAuthenticated())
+    return next();
+  res.redirect('/');
+}
 };
