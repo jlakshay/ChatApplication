@@ -1,10 +1,9 @@
 /*===================== load all the files we need ========================================*/
 import express from 'express';
-import register from './register';
+import login from './login';
 
 let router=express.Router();
 /*=====================     providing routers    ========================================*/
-router.post('/',register);
-router.get('/')
+router.post('/',login);
 
 export default router;

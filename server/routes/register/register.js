@@ -1,7 +1,7 @@
 /*===================== load all the things we need ========================================*/
 import express from 'express';
 /*===================  load up the user model ==============================================*/
-import user from '../../model/user';
+import User from '../../model/user';
 /*===================  load up the user model ==============================================*/
 import message from '../../config/app.config';
 // import logger from '../../log4js';

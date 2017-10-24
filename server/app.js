@@ -9,10 +9,12 @@ import path from 'path';
 import index from './routes/index';
 import group from './routes/group';
 import register from './routes/register';
-
+import login from  './routes/login';
+import otpVerify from './routes/otpVerification/verification';
+import cors from 'cors';
 const db = require('mongoose');
 
-db.connect('mongodb://localhost/chat', { useMongoClient: true });
+db.connect('mongodb://localhost/chat');
 
 
 const app = express();
@@ -29,10 +31,13 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 app.use('/', index);
 app.use('/groupchat', group);
 app.use('/register',register);
+app.use('/login',login);
+app.use('/otpVerify', otpVerify);
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

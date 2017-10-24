@@ -1,11 +1,11 @@
 export const testConf={
 	registerTest:{
-		"email":"nishantjaiswal49@gmail.com",
+		"email":"rumani.jain@gmail.com",
 		"contact":"123",
         "dob":"12/12/12",
 		"password":"12345",
-    	"fullName":"nishant",
-        "emailNegative":"nishantjaiswal"
+    	"fullName":"Rumani",
+        "emailNegative":"Rumanijain"
 	},
   flagTest:{
 		"Email":"nishantjaiswal49@gmail.com",
