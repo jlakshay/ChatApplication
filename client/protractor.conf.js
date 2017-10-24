@@ -7,7 +7,9 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: [
    './e2e/spec/register.component.spec.ts',
-   './e2e/spec/Mailverification.spec.ts'
+   './e2e/spec/Mailverification.spec.ts',
+   './e2e/spec/forgetPass.component.spec.ts',
+   './e2e/spec/setPass.component.spec.ts'
   ],
   capabilities: {
     'browserName': 'chrome'

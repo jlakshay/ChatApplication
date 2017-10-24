@@ -11,6 +11,9 @@ import index from './routes/index';
 import group from './routes/group';
 import register from './routes/register';
 import login from  './routes/login';
+import forgotPassword from './routes/forgotPassword';
+import getUserInfo from './routes/getUserInfo';
+import update from './routes/updateUserData';
 import cors from 'cors';
 import otpVerify from './routes/otpVerification/verification';
 
@@ -43,7 +46,9 @@ app.use('/', index);
 app.use('/groupchat', group);
 app.use('/register',register);
 app.use('/login',login);
-
+app.use('/update', update);
+app.use('/forgotPass',forgotPassword);
+app.use('/getUserInfo',getUserInfo);
 app.use('/otpVerify', otpVerify);
 
 
